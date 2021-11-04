@@ -87,6 +87,9 @@
     display: flex;
     justify-content: flex-end;
     margin: 20px;
+    @include mobile{
+        margin: 10px 0px 0px 0px;
+    }
 }
 .input-search{
     min-width: 250px;

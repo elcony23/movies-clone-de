@@ -60,11 +60,11 @@ const Movies: FC = (props) => {
     return(
         <div className={styles['main-container']}>
             <div className={styles['filter-container']}>
-            <DateRangePicker
-                className={styles["DateRangePicker"]}
-                onChange={onDateRangeChange}
-                value={dates}
-            />
+                <DateRangePicker
+                    className={styles["DateRangePicker"]}
+                    onChange={onDateRangeChange}
+                    value={dates}
+                />
                 <input onChange={evt => setSearch(evt.target.value)} onKeyPress={(event) =>onKeyPress(event)} className={styles['input-search']} type="text" placeholder="Ingrese texto de búsqueda"/>
             </div>
             <Row
