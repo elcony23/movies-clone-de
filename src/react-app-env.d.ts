@@ -15,3 +15,17 @@ interface IMovie{
     title: string
     info: MovieInfo
 }
+
+interface Props{
+    movie: IMovie
+    onClick: (data:IMovie) => void
+    isFavorites:boolean
+    onSelectFavoriteMovie?:any
+}
+interface RowProps{
+    isFavorites:boolean
+    title:string
+    movies:IMovie[]
+    onMovieClick?: any
+    onSelectFavoriteMovie?:any
+}

@@ -1,30 +1,18 @@
 
-import React, { useState , FC , memo } from "react"
-import movies from '../../utils/movies.json'
+import React, { useState , FC , memo ,useEffect} from "react"
+import AllMovies from '../../utils/movies.json'
 import styles from './Movies.module.scss'
 import Modal from 'react-modal';
 import { useDispatch , useSelector } from 'react-redux'
 import { setMovies ,selectFavoritesMovies } from '../../reducers/movies';
 import IconStar from '../../img/star.png'
-interface Props{
-    movie: IMovie
-    onClick: (data:IMovie) => void
-    isFavorites:boolean
-    onSelectFavoriteMovie?:any
-}
-interface RowProps{
-    isFavorites:boolean
-    title:string
-    movies:IMovie[]
-    onMovieClick?: any
-    onSelectFavoriteMovie?:any
-}
 const Movies: FC = (props) => {
     const dispatch = useDispatch()
     const favoriteMovies = useSelector(selectFavoritesMovies)
-    const [currentMovie,setCurrentMovie ] = useState<IMovie | undefined>(undefined)
-    const [openModal , setOpenModal ] = useState(false)
+    const [ currentMovie, setCurrentMovie ] = useState<IMovie | undefined>(undefined)
+    const [ openModal , setOpenModal ] = useState(false)
     const [ search , setSearch ] = useState("")
+    const [ movies, setLocalMovies] = useState<IMovie[]>(AllMovies)
     const onMovieClick = movie => {
         //dispatch(setMovies(movie))
         setCurrentMovie(movie)
@@ -46,15 +34,22 @@ const Movies: FC = (props) => {
       };
       const onKeyPress = event => {
         if(event.key === 'Enter' || event.keyCode === 13){
-            let moviesFiltered = movies.slice(0,10).filter(({title,info}) => {
+            let moviesFiltered = AllMovies.filter(({title,info}) => {
                 if(info && info.genres && info.genres.length > 0){
                     return title.toLowerCase().includes(search.toLowerCase()) || info.genres.map(genre => genre.toLowerCase()).includes(search.toLowerCase())
                 }
                 else
                     return title.toLowerCase().includes(search.toLowerCase())
             })
+            setLocalMovies(moviesFiltered.length > 0 ? moviesFiltered : AllMovies)
         }
+        console.log(event.key)
       }
+      useEffect(() => {
+          if(search.length  === 0){
+              setLocalMovies(AllMovies)
+          }
+      }, [search])
     return(
         <div className={styles['main-container']}>
             <div className={styles['filter-container']}>
@@ -63,7 +58,7 @@ const Movies: FC = (props) => {
             <Row
                 title="Tendencias"
                 isFavorites={false}
-                movies={movies.slice(0,20)}
+                movies={movies}
                 onSelectFavoriteMovie={(movie) => dispatch(setMovies(movie))}
                 onMovieClick={onMovieClick}
             />
@@ -112,6 +107,7 @@ const Row:FC<RowProps> = ({title,movies,onMovieClick,isFavorites,onSelectFavorit
     <>
         <h2 className={styles['movies-header']}>{title}</h2>
         <div className={styles['container-movies']}>
+            {isFavorites && movies.length === 0 && <div>No se han seleccionado peliculas favoritas...</div>}
             {movies.map((movie,idx):any => <Movie key={idx} onSelectFavoriteMovie={onSelectFavoriteMovie} isFavorites={isFavorites} onClick={(movie) => onMovieClick(movie)} movie={movie}/>)}
         </div>
     </>
