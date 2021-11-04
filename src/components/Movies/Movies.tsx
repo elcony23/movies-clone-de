@@ -6,6 +6,8 @@ import Modal from 'react-modal';
 import { useDispatch , useSelector } from 'react-redux'
 import { setMovies ,selectFavoritesMovies } from '../../reducers/movies';
 import IconStar from '../../img/star.png'
+import DateRangePicker from '@wojtekmaj/react-daterange-picker'
+import { filteredMovies } from "../../utils/utils";
 const Movies: FC = (props) => {
     const dispatch = useDispatch()
     const favoriteMovies = useSelector(selectFavoritesMovies)
@@ -13,6 +15,7 @@ const Movies: FC = (props) => {
     const [ openModal , setOpenModal ] = useState(false)
     const [ search , setSearch ] = useState("")
     const [ movies, setLocalMovies] = useState<IMovie[]>(AllMovies)
+    const [ dates, setDates] = useState([new Date(), new Date()]);
     const onMovieClick = movie => {
         //dispatch(setMovies(movie))
         setCurrentMovie(movie)
@@ -32,27 +35,36 @@ const Movies: FC = (props) => {
           boxShadow:'rgb(174 184 195 / 50%) 0px 6px 18px 0px'
         },
       };
+      const filteredData = ({endDate,startDate}) => {
+        let movies = filteredMovies({
+            movies:AllMovies,
+            search,
+            startDate,
+            endDate})
+        setLocalMovies(movies)
+      }
       const onKeyPress = event => {
         if(event.key === 'Enter' || event.keyCode === 13){
-            let moviesFiltered = AllMovies.filter(({title,info}) => {
-                if(info && info.genres && info.genres.length > 0){
-                    return title.toLowerCase().includes(search.toLowerCase()) || info.genres.map(genre => genre.toLowerCase()).includes(search.toLowerCase())
-                }
-                else
-                    return title.toLowerCase().includes(search.toLowerCase())
-            })
-            setLocalMovies(moviesFiltered.length > 0 ? moviesFiltered : AllMovies)
+            filteredData({startDate:dates[0],endDate:dates[1]})
         }
-        console.log(event.key)
       }
       useEffect(() => {
           if(search.length  === 0){
               setLocalMovies(AllMovies)
           }
       }, [search])
+      const onDateRangeChange = (parDates) => {
+        setDates(parDates)
+        filteredData({startDate:parDates[0],endDate:parDates[1]})
+      }
     return(
         <div className={styles['main-container']}>
             <div className={styles['filter-container']}>
+            <DateRangePicker
+                className={styles["DateRangePicker"]}
+                onChange={onDateRangeChange}
+                value={dates}
+            />
                 <input onChange={evt => setSearch(evt.target.value)} onKeyPress={(event) =>onKeyPress(event)} className={styles['input-search']} type="text" placeholder="Ingrese texto de búsqueda"/>
             </div>
             <Row

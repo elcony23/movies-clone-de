@@ -10,7 +10,7 @@ const App = () => {
         <Router>
                 <div className={styles['main-container']}>
                     <Switch>
-                        <RouteWithTitle exact title="Productos" path="/inicio" component={Movies} />
+                        <RouteWithTitle exact title="Peliculas" path="/inicio" component={Movies} />
                         <Redirect to="/inicio" />
                     </Switch>
                 </div>
