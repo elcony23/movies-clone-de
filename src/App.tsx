@@ -4,13 +4,16 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-d
 import DocumentTitle from 'react-document-title'
 import styles from './App.module.scss'
 import Movies from './components/Movies/Movies'
+import Share from './components/Share/Share'
 
 const App = () => {
     return(
         <Router>
                 <div className={styles['main-container']}>
                     <Switch>
+
                         <RouteWithTitle exact title="Peliculas" path="/inicio" component={Movies} />
+                        <RouteWithTitle exact title="Compartir" path="/compartir" component={Share} />
                         <Redirect to="/inicio" />
                     </Switch>
                 </div>

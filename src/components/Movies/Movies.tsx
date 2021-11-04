@@ -121,7 +121,7 @@ const Row:FC<RowProps> = ({title,movies,onMovieClick,isFavorites,onSelectFavorit
     <>
         <h2 className={styles['movies-header']}>{title}</h2>
         <div className={styles['container-movies']}>
-            {isFavorites && movies.length === 0 && <div>No se han seleccionado peliculas favoritas...</div>}
+            {movies.length === 0 && <div>No se han seleccionado peliculas</div>}
             {movies.map((movie,idx):any => <Movie key={idx} isSelectedAsFavorite={favoriteMovies?.includes(movie.title)} onSelectFavoriteMovie={onSelectFavoriteMovie} isFavorites={isFavorites} onClick={(movie) => onMovieClick(movie)} movie={movie}/>)}
         </div>
     </>

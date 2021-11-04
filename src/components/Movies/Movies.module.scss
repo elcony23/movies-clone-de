@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .main-container{
     display: flex;
     flex-direction: column;
@@ -12,6 +14,14 @@
     &::-webkit-scrollbar{
         display: none;
     }
+    @include mobile{
+        display: flex;
+        flex-wrap: wrap;
+        padding:20px;
+        overflow-y: scroll;
+        height: 300px;
+        justify-content: space-around;
+    }
 }
 .movie{
     cursor: pointer;
@@ -19,8 +29,15 @@
     max-width: 200px;
     margin-right: 20px;
     position: relative;
+    @include mobile{
+        margin: 0px 0px 20px 0px
+
+    }
     .icon-star{
         display: none;
+        @include mobile{
+            display: block;
+        }
     }
     .movie-info{
         position: absolute;
@@ -76,8 +93,12 @@
     height: 45px;
     border-radius: 5px;
     border: 0;
+    @include mobile{
+        min-width: 150px;
+    }
 }
 .DateRangePicker{
     background-color: white;
     margin-right: 15px;
+
 }
