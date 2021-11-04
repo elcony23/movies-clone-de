@@ -237,5 +237,255 @@
                 "Mark Ruffalo"
             ]
         }
+    },
+    {
+        "id":11,
+        "year": 2013,
+        "title": "Despicable Me 2",
+        "info": {
+            "directors": [
+                "Pierre Coffin",
+                "Chris Renaud"
+            ],
+            "release_date": "2013-06-16T00:00:00Z",
+            "rating": 7.7,
+            "genres": [
+                "Animation",
+                "Adventure",
+                "Comedy",
+                "Crime"
+            ],
+            "image_url": "https://imagesqc.s3.amazonaws.com/despicableme2.jpeg",
+            "plot": "Gru is recruited by the Anti-Villain League to help deal with a powerful new super criminal.",
+            "rank": 55,
+            "running_time_secs": 5880,
+            "actors": [
+                "Steve Carell",
+                "Kristen Wiig",
+                "Benjamin Bratt"
+            ]
+        }
+    },
+    {
+        "id":12,
+        "year": 1989,
+        "title": "Back to the Future Part II",
+        "info": {
+            "directors": ["Robert Zemeckis"],
+            "release_date": "1989-11-20T00:00:00Z",
+            "rating": 7.7,
+            "genres": [
+                "Adventure",
+                "Comedy",
+                "Sci-Fi"
+            ],
+            "image_url": "https://imagesqc.s3.amazonaws.com/backttf2.jpeg",
+            "plot": "After visiting 2015, Marty McFly must repeat his visit to 1955 to prevent disastrous changes to 1985... without interfering with his first trip.",
+            "rank": 846,
+            "running_time_secs": 6480,
+            "actors": [
+                "Michael J. Fox",
+                "Christopher Lloyd",
+                "Lea Thompson"
+            ]
+        }
+    },
+    {
+        "id":13,
+        "year": 2010,
+        "title": "Resident Evil: Afterlife",
+        "info": {
+            "directors": ["Paul W.S. Anderson"],
+            "release_date": "2010-09-02T00:00:00Z",
+            "rating": 5.8,
+            "genres": [
+                "Action",
+                "Adventure",
+                "Horror",
+                "Sci-Fi"
+            ],
+            "image_url": "https://imagesqc.s3.amazonaws.com/residentevil.jpg",
+            "plot": "While still out to destroy the evil Umbrella Corporation, Alice joins a group of survivors who want to relocate to the mysterious but supposedly unharmed safe haven known only as Arcadia.",
+            "rank": 858,
+            "running_time_secs": 5820,
+            "actors": [
+                "Milla Jovovich",
+                "Ali Larter",
+                "Wentworth Miller"
+            ]
+        }
+    },
+    {
+        "id":14,
+        "year": 1990,
+        "title": "Edward Scissorhands",
+        "info": {
+            "directors": ["Tim Burton"],
+            "release_date": "1990-12-06T00:00:00Z",
+            "rating": 8,
+            "genres": [
+                "Drama",
+                "Fantasy",
+                "Romance"
+            ],
+            "image_url": "https://imagesqc.s3.amazonaws.com/scissorhands.jpg",
+            "plot": "An uncommonly gentle young man, who happens to have scissors for hands, falls in love with a beautiful adolescent girl.",
+            "rank": 863,
+            "running_time_secs": 6300,
+            "actors": [
+                "Johnny Depp",
+                "Winona Ryder",
+                "Dianne Wiest"
+            ]
+        }
+    },
+    {
+        "id":15,
+        "year": 2016,
+        "title": "Avatar 2",
+        "info": {
+            "directors": ["James Cameron"],
+            "release_date": "2016-12-01T00:00:00Z",
+            "genres": [
+                "Action",
+                "Adventure",
+                "Fantasy",
+                "Sci-Fi"
+            ],
+            "image_url": "https://imagesqc.s3.amazonaws.com/avatar2.jpeg",
+            "plot": "A sequel to the 2009 global phenomenon.",
+            "rank": 909,
+            "rating":8.3,
+            "actors": [
+                "Zoe Saldana",
+                "Sigourney Weaver",
+                "Sam Worthington"
+            ]
+        }
+    },
+    {
+        "id":16,
+        "year": 1982,
+        "title": "Grease 2",
+        "info": {
+            "directors": ["Patricia Birch"],
+            "release_date": "1982-06-11T00:00:00Z",
+            "rating": 3.8,
+            "genres": [
+                "Comedy",
+                "Drama",
+                "Musical",
+                "Romance"
+            ],
+            "image_url": "https://imagesqc.s3.amazonaws.com/grease2.jpeg",
+            "plot": "An English student at a 1960's American high school has to prove himself to the leader of a girls' gang whose members can only date greasers.",
+            "rank": 2689,
+            "running_time_secs": 6900,
+            "actors": [
+                "Michelle Pfeiffer",
+                "Maxwell Caulfield",
+                "Lorna Luft"
+            ]
+        }
+    },
+    {
+        "id":17,
+        "year": 1979,
+        "title": "Rocky II",
+        "info": {
+            "directors": ["Sylvester Stallone"],
+            "release_date": "1979-06-15T00:00:00Z",
+            "rating": 6.9,
+            "genres": [
+                "Drama",
+                "Sport"
+            ],
+            "image_url": "https://imagesqc.s3.amazonaws.com/rocky2.jpeg",
+            "plot": "Rocky struggles in family life after his bout with Apollo Creed, while the embarrassed champ insistently goads him to accept a challenge for a rematch.",
+            "rank": 2694,
+            "running_time_secs": 7140,
+            "actors": [
+                "Sylvester Stallone",
+                "Talia Shire",
+                "Burt Young"
+            ]
+        }
+    },
+    {
+        "id":18,
+        "year": 2004,
+        "title": "The Ladykillers",
+        "info": {
+            "directors": [
+                "Ethan Coen",
+                "Joel Coen"
+            ],
+            "release_date": "2004-03-26T00:00:00Z",
+            "rating": 6.1,
+            "genres": [
+                "Comedy",
+                "Crime",
+                "Thriller"
+            ],
+            "image_url": "https://imagesqc.s3.amazonaws.com/theladykillers.jpeg",
+            "plot": "An eccentric, if not charming Southern professor and his crew pose as a band in order to rob a casino, all under the nose of his unsuspecting landlord: a sharp old woman.",
+            "rank": 2707,
+            "running_time_secs": 6240,
+            "actors": [
+                "Tom Hanks",
+                "Marlon Wayans",
+                "Irma P. Hall"
+            ]
+        }
+    },
+    {
+        "id":19,
+        "year": 1986,
+        "title": "The Mission",
+        "info": {
+            "directors": ["Roland Joffe"],
+            "release_date": "1986-05-16T00:00:00Z",
+            "rating": 7.4,
+            "genres": [
+                "Adventure",
+                "Drama",
+                "History"
+            ],
+            "image_url": "https://imagesqc.s3.amazonaws.com/themission.jpeg",
+            "plot": "18th century Spanish Jesuits try to protect a remote South American Indian tribe in danger of falling under the rule of pro-slavery Portugal.",
+            "rank": 2708,
+            "running_time_secs": 7500,
+            "actors": [
+                "Robert De Niro",
+                "Jeremy Irons",
+                "Ray McAnally"
+            ]
+        }
+    },
+    {
+        "id":20,
+        "year": 2003,
+        "title": "Shanghai Knights",
+        "info": {
+            "directors": ["David Dobkin"],
+            "release_date": "2003-01-30T00:00:00Z",
+            "rating": 6.1,
+            "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Western"
+            ],
+            "image_url": "https://imagesqc.s3.amazonaws.com/shanghai.jpeg",
+            "plot": "When a Chinese rebel murders Chon's estranged father and escapes to England, Chon and Roy make their way to London with revenge on their minds.",
+            "rank": 2717,
+            "running_time_secs": 6840,
+            "actors": [
+                "Jackie Chan",
+                "Owen Wilson",
+                "Fann Wong"
+            ]
+        }
     }
+
 ]
