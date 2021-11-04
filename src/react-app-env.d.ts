@@ -11,6 +11,7 @@ interface MovieInfo{
     actors?: string[]
 }
 interface IMovie{
+    id: number
     year: number
     title: string
     info: MovieInfo

@@ -5,11 +5,12 @@ import DocumentTitle from 'react-document-title'
 import styles from './App.module.scss'
 import Movies from './components/Movies/Movies'
 import Share from './components/Share/Share'
-
+import TopBar from './components/TopBar/TopBar';
 const App = () => {
     return(
         <Router>
                 <div className={styles['main-container']}>
+                    <TopBar/>
                     <Switch>
 
                         <RouteWithTitle exact title="Peliculas" path="/inicio" component={Movies} />
