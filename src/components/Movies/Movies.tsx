@@ -125,7 +125,7 @@ const Movie: FC<Props> = memo(({movie,onClick,isFavorites,onSelectFavoriteMovie}
     return(
         <div className={styles["movie"]} onClick={() => onClick(movie)}>
             {!isFavorites && <img alt="" className={styles['icon-star']} onClick={(evt) => selectFavoriteMovie(evt)} src={IconStar} style={{position:'absolute',bottom:20,right:15,width:25}}/>}
-            <img src={"http://image.tmdb.org/t/p/original//dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg"} className={styles['img-movie']} alt=""/>
+            <img src={movie.info.image_url} className={styles['img-movie']} alt=""/>
         </div>
         )
 })
