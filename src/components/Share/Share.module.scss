@@ -1,4 +1,4 @@
-
+@import "../../variables.scss";
 .main-container{
     display: flex;
     flex-direction: column;
@@ -25,16 +25,15 @@
     display: flex;
     flex-direction: column;
 }
-/*input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}*/
+.container{
+    background:#564d4d;
+    padding:12px;
+    width:500px;
+    border-radius:8px;
+    @include mobile{
+        width: 90%;
+    }
+}
 .btn{
     background-color: 	#db0000;
     color: white;

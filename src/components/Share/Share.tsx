@@ -24,7 +24,7 @@ const Share = () => {
     }
     return(
         <div className={styles['main-container']}>
-            <div style={{background:'#564d4d',padding:12,width:500,borderRadius:8}}>
+            <div className={styles['container']}>
                 <div className={styles['item']}>
                     <label className={styles['label']}>Peliculas</label>
                     <select value={movie?.id} onChange={onChangeSelect} className={styles['select']}>
