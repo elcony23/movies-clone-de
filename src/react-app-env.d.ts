@@ -21,6 +21,7 @@ interface Props{
     onClick: (data:IMovie) => void
     isFavorites:boolean
     onSelectFavoriteMovie?:any
+    isSelectedAsFavorite?:boolean
 }
 interface RowProps{
     isFavorites:boolean
@@ -28,4 +29,5 @@ interface RowProps{
     movies:IMovie[]
     onMovieClick?: any
     onSelectFavoriteMovie?:any
+    favoriteMovies?:IMoview[]
 }

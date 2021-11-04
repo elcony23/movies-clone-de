@@ -59,6 +59,7 @@ const Movies: FC = (props) => {
                 title="Tendencias"
                 isFavorites={false}
                 movies={movies}
+                favoriteMovies={favoriteMovies.map(({title}) => title)}
                 onSelectFavoriteMovie={(movie) => dispatch(setMovies(movie))}
                 onMovieClick={onMovieClick}
             />
@@ -66,6 +67,7 @@ const Movies: FC = (props) => {
                 title="Favoritos"
                 isFavorites={true}
                 movies={favoriteMovies}
+                onMovieClick={onMovieClick}
             />
             <Modal
                 isOpen={openModal}
@@ -102,25 +104,25 @@ const Movies: FC = (props) => {
         </div>
     )
 }
-const Row:FC<RowProps> = ({title,movies,onMovieClick,isFavorites,onSelectFavoriteMovie}) => {
+const Row:FC<RowProps> = ({title,movies,onMovieClick,isFavorites,onSelectFavoriteMovie,favoriteMovies}) => {
     return(<div className={styles['movies-type']}>
     <>
         <h2 className={styles['movies-header']}>{title}</h2>
         <div className={styles['container-movies']}>
             {isFavorites && movies.length === 0 && <div>No se han seleccionado peliculas favoritas...</div>}
-            {movies.map((movie,idx):any => <Movie key={idx} onSelectFavoriteMovie={onSelectFavoriteMovie} isFavorites={isFavorites} onClick={(movie) => onMovieClick(movie)} movie={movie}/>)}
+            {movies.map((movie,idx):any => <Movie key={idx} isSelectedAsFavorite={favoriteMovies?.includes(movie.title)} onSelectFavoriteMovie={onSelectFavoriteMovie} isFavorites={isFavorites} onClick={(movie) => onMovieClick(movie)} movie={movie}/>)}
         </div>
     </>
 </div>)
 }
-const Movie: FC<Props> = memo(({movie,onClick,isFavorites,onSelectFavoriteMovie}) => {
+const Movie: FC<Props> = memo(({movie,onClick,isFavorites,onSelectFavoriteMovie,isSelectedAsFavorite}) => {
     const selectFavoriteMovie = (event) =>{
         event.stopPropagation()
         onSelectFavoriteMovie(movie)
     }
     return(
         <div className={styles["movie"]} onClick={() => onClick(movie)}>
-            {!isFavorites && <img alt="" className={styles['icon-star']} onClick={(evt) => selectFavoriteMovie(evt)} src={IconStar} style={{position:'absolute',bottom:20,right:15,width:25}}/>}
+            {!isFavorites && !isSelectedAsFavorite && <img alt="" className={styles['icon-star']} onClick={(evt) => selectFavoriteMovie(evt)} src={IconStar} style={{position:'absolute',bottom:20,right:15,width:25}}/>}
             <img src={movie.info.image_url} className={styles['img-movie']} alt=""/>
         </div>
         )
